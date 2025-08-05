@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles.css?v=1.1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1/bundled/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-logo" onclick="scrollToTop()">
+            <h3>manu<span class="logoitalic">namburi</span></h3>
+        </div>
+
+        <div class="nav-menu">
+            <a href="#projects" class="nav-link">WORK</a>
+            <a href="#about" class="nav-link">ABOUT</a>
+            <a href="#contact" class="nav-link">CONTACT</a>
+        </div>
+        <div class="mobile-nav-group">
+            <div class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="mobile-nav-menu">
+                <a href="#projects" class="nav-link">WORK</a>
+                <a href="#about" class="nav-link">ABOUT</a>
+                <a href="#contact" class="nav-link">CONTACT</a>
+            </div>
+            
+            <div class="nav-button">
+                <button class="available-btn" onclick="scrollToContact()">
+                    <span class="blink-dot"></span>
+                    Available for Work
+                </button>
+            </div>
+        </div>
+    </nav>
+    
+
+    <div class="bg-container">
+
+    </div>
+    <section id="hero" class="hero-section">
+        <div class="hero-text">
+            <h2>Hello!</h2>
+            <h2>I'm a creative</h2>
+            <h1>PRODUCT DESIGNER</h1>
+        </div>
+        <div class="hero-video">
+            <video autoplay muted loop playsinline>
+                <source src="assets/blue.webm" type="video/webm">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="hero-bottom-content">
+            <div class="arrow-circle">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M7 17L17 7M17 7H7M17 7V17" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="rotate(90 12 12)"/>
+                </svg>
+            </div>
+            <div class="hero-desc">
+                <p>I love crafting intuitive interfaces and meaningful experiences that feel as good as they look.</p>
+            </div>
+        </div>
+        <div class="circular-text">
+            <div class="text">-- SCROLL DOWN -- TO SEE -- MY WORK&nbsp;&nbsp;&nbsp;&nbsp;</div>
+        </div>
+        <div class="center-text">M.</div>
+    </section>
+    
+    <section id="about" class="about-section">
+            <div class="about-flex-container">
+                <div class="about-text-container">
+                    <p class="about-text">
+                        <span>I focus on what matters -</span> 
+                        <span class="abt-highlight">people, problems, and purposeful design,</span>
+                        <span>to build products that are a delight to use.</span>
+                    </p>
+                    <p class="about-text-shadow">
+                        <span>I focus on what matters -</span> 
+                        <span class="abt-shadow-highlight">people, problems, and purposeful design,</span>
+                        <span>to build products that are a delight to use.</span>
+                    </p>
+                </div>
+                
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-content">
+                                <div class="stat-emoji">📁</div>
+                                <div class="stat-right-content">
+                                    <div class="stat-number">40+</div>
+                                    <div class="stat-label">Projects</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-content">
+                                <div class="stat-emoji">✨</div>
+                                <div class="stat-right-content">
+                                    <div class="stat-number">5+</div>
+                                    <div class="stat-label">Years Experience</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="stat-item resume-download" onclick="downloadResume()">
+                            <div class="stat-content">
+                                <div class="stat-emoji">📋</div>
+                                <div class="stat-right-content">
+                                    <div class="stat-number">Resume</div>
+                                    <div class="stat-label">Download</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Floating Images Grid -->
+                <div class="image-grid">
+                    <div class="image1">
+                        <img src="assets/abc.png" alt="Resume Image 1">
+                    </div>
+                    <div class="image2">
+                        <img src="assets/abc.png" alt="Resume Image 2">
+                    </div>
+                    <div class="image3">
+                        <img src="assets/abc.png" alt="Resume Image 3">
+                    </div>
+                    <div class="image4">
+                        <img src="assets/abc.png" alt="Resume Image 4">  
+                    </div>
+                    <div class="image5">
+                        <img src="assets/abc.png" alt="Resume Image 5">
+                    </div>
+                    <div class="image6">
+                        <img src="assets/abc.png" alt="Resume Image 6">
+                    </div>
+                </div>
+        </div>
+    </section>
+    
+    <!-- Latest Works Heading -->
+    <section id="projects" class="latest-works-heading">
+        <div class="container">
+            <div class="works-header">
+                <div class="works-arrow-circle">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="rotate(90 12 12)"/>
+                    </svg>
+                </div>
+                <h2 class="works-title">
+                    LATEST WORKS
+                </h2>
+            </div>
+        </div>
+    </section>
+
+    <div class="workcontainer">
+        <ul id="cards">
+            <li class="card" id="card1">
+                <div class="card-body">
+                    <div class="card-title">
+                        <p>PROJECT 01</p>
+                        <h2>GPU.NET</h2>
+                    </div>
+
+                    <div class="card-images">
+                        <div class="image-container">
+                            <img src="assets/abc.png" alt="Project Image 1">
+                        </div>
+                        <div class="case-study-overlay">
+                            <a href="case-study-1.html" class="case-study-btn">
+                                <div class="arrow-icon">-- VIEW -- UX -- CASE -- STUDY</div>
+                                <svg class="center-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <a href="case-study-1.html" class="mobile-case-study-btn">View Case Study</a>
+                </div>
+            </li>
+            <li class="card" id="card2">
+                <div class="card-body">
+                    <div class="card-title">
+                        <p>PROJECT 01</p>
+                        <h2>GPU.NET</h2>
+                    </div>
+
+                    <div class="card-images">
+                        <div class="image-container">
+                            <img src="assets/abc.png" alt="Project Image 1">
+                        </div>
+                        <div class="case-study-overlay">
+                            <a href="case-study-1.html" class="case-study-btn">
+                                <div class="arrow-icon">-- VIEW -- UX -- CASE -- STUDY</div>
+                                <svg class="center-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <a href="case-study-1.html" class="mobile-case-study-btn">View Case Study</a>
+                </div>
+            </li>
+            <li class="card" id="card3">
+                <div class="card-body">
+                    <div class="card-title">
+                    <p>PROJECT 01</p>
+                    <h2>GPU.NET</h2>
+                </div>
+
+                <div class="card-images">
+                    <div class="image-container">
+                        <img src="assets/abc.png" alt="Project Image 1">
+                    </div>
+                    <div class="case-study-overlay">
+                        <a href="case-study-1.html" class="case-study-btn">
+                            <div class="arrow-icon">-- VIEW -- UX -- CASE -- STUDY</div>
+                            <svg class="center-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <a href="case-study-1.html" class="mobile-case-study-btn">View Case Study</a>
+                </div>
+            </li>
+            <li class="card" id="card4">
+                <div class="card-body">
+                    <div class="card-title">
+                        <p>PROJECT 01</p>
+                        <h2>GPU.NET</h2>
+                    </div>
+
+                    <div class="card-images">
+                        <div class="image-container">
+                            <img src="assets/abc.png" alt="Project Image 1">
+                        </div>
+                        <div class="case-study-overlay">
+                            <a href="case-study-1.html" class="case-study-btn">
+                                <div class="arrow-icon">-- VIEW -- UX -- CASE -- STUDY</div>
+                                <svg class="center-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <a href="case-study-1.html" class="mobile-case-study-btn">View Case Study</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="contact-bg-video">
+            <video autoplay muted loop playsinline>
+                <source src="assets/ghb.webm" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="contact-container">
+            <div class="contact-content">
+                <div class="contact-left">
+                    <div class="contact-hero">
+                        <h1 class="contact-title">Let's talk about your Project !</h1>
+                        <p class="contact-subtitle">Whether it’s work, collaboration, or just a design chat — I’d love to hear from you!</p>
+                    </div>
+                </div>
+                
+                <div class="contact-right">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon">✉️</div>
+                            <div class="contact-details">
+                                <h3>Email</h3>
+                                <a href="mailto:manogna.design@gmail.com">manogna.design@gmail.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">🌍</div>
+                            <div class="contact-details">
+                                <h3>Location</h3>
+                                <p>Bengaluru, IN</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">☎️</div>
+                            <div class="contact-details">
+                                <h3>Phone</h3>
+                                <a href="tel:+919535086399">+91 95350 86399</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <div class="arrow-circle">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="rotate(90 12 12)"/>
+                            </svg>
+                        </div>
+                        <a href="https://linkedin.com/in/manu-namburi" target="_blank" class="social-link">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        
+                        <a href="https://behance.net/manu-namburi" target="_blank" class="social-link">
+                            <i class="fab fa-behance"></i>
+                        </a>
+                        
+                        <a href="https://dribbble.com/manu-namburi" target="_blank" class="social-link">
+                            <i class="fab fa-dribbble"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Manu Namburi</p>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html> 
