@@ -154,7 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const subtleAnimations = () => {
         // Floating animation for arrow circle
         gsap.to('.arrow-circle', {
-            y: -10,
+            y: -5,
             duration: 2,
             ease: "power1.inOut",
             yoyo: true,
@@ -246,14 +246,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
             
-            // Animate stats with staggered effect
+            // Animate stats simultaneously
             statsTimeline.to(statItems, {
                 y: 0,
                 opacity: 1,
                 scale: 1,
-                duration: 1.2,
-                ease: "power2.out",
-                stagger: 0.2
+                duration: 0.3,
+                ease: "power2.out"
             });
         }
 
@@ -648,7 +647,7 @@ document.addEventListener('DOMContentLoaded', () => {
         gsap.fromTo([arrowCircle, ...socialLinks], {
             opacity: 0,
             scale: 0.8,
-            y: 20
+            y: 10
         }, {
             opacity: 1,
             scale: 1,
@@ -667,13 +666,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Resume download function
     window.downloadResume = function() {
-        // Create a temporary link element
         const link = document.createElement('a');
-        link.href = './assets/resume.pdf'; // Update this path to your actual resume file
-        link.download = 'Resume.pdf';
-        link.target = '_blank';
+        link.href = './assets/Manogna_Resume_25.pdf';
+        link.download = 'Manogna_Resume_2025.pdf';
         
-        // Append to body, click, and remove
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
