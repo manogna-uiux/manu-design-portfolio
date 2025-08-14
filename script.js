@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
             y: 0,
             duration: 1.0,
             ease: "power3.out"
-        }, "+=0.15")
+        }, "-=0.55")
         .to('.arrow-circle, .circular-text, .center-text', {
             opacity: 1,
             scale: 1,
@@ -214,12 +214,17 @@ document.addEventListener('DOMContentLoaded', () => {
             });
             
             // Animate main text lines from left to right
+            // Reduce animation duration on small screens
+            const isMobile = window.innerWidth <= 768;
+            const animationDuration = isMobile ? 0.15 : 0.3;
+            const staggerDelay = isMobile ? 0.02 : 0.05;
+            
             lines.forEach((line, index) => {
                 tl.to(line, {
                     clipPath: "inset(0 0% 0 0)",
-                    duration: 2,
+                    duration: animationDuration,
                     ease: "power2.out"
-                }, index * 0.4);
+                }, index * staggerDelay);
             });
             
             // No animation for shadow text - it stays at 0.2 opacity always
@@ -251,7 +256,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 y: 0,
                 opacity: 1,
                 scale: 1,
-                duration: 0.3,
+                duration: 0.15,
                 ease: "power2.out"
             });
         }
@@ -261,50 +266,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize scroll animations
     scrollAnimations();
     
-    // Handle window resize for case study button animations
-    let caseStudyAnimation = null;
+    // Circular button animations removed - now using mobile button on all screen sizes
     
-    const handleCaseStudyAnimation = () => {
-        // Kill existing animation if it exists
-        if (caseStudyAnimation) {
-            caseStudyAnimation.kill();
-        }
-        
-        // Only create animation on desktop
-        if (window.innerWidth > 768) {
-            caseStudyAnimation = gsap.to('.case-study-btn .arrow-icon', {
-                rotation: 360,
-                duration: 15,
-                ease: "none",
-                repeat: -1
-            });
-        }
-    };
-    
-    // Initial setup
-    handleCaseStudyAnimation();
-    
-    // Listen for window resize
-    window.addEventListener('resize', handleCaseStudyAnimation);
-    
-    // Debug: Check mobile buttons on load
-    setTimeout(() => {
-        const mobileButtons = document.querySelectorAll('.mobile-case-study-btn');
-        const circularOverlays = document.querySelectorAll('.case-study-overlay');
-        
-        console.log('Mobile buttons found:', mobileButtons.length);
-        console.log('Circular overlays found:', circularOverlays.length);
-        
-        mobileButtons.forEach((btn, index) => {
-            console.log(`Mobile button ${index + 1} display:`, window.getComputedStyle(btn).display);
-            console.log(`Mobile button ${index + 1} visibility:`, window.getComputedStyle(btn).visibility);
-        });
-        
-        circularOverlays.forEach((overlay, index) => {
-            console.log(`Circular overlay ${index + 1} display:`, window.getComputedStyle(overlay).display);
-            console.log(`Circular overlay ${index + 1} visibility:`, window.getComputedStyle(overlay).visibility);
-        });
-    }, 1000);
+    // Debug code removed - circular overlays are now hidden on all screen sizes
 
     // About section is now empty - no scroll images needed
 

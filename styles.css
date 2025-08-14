@@ -160,15 +160,17 @@ body {
 
 .nav-logo h3 {
     font-size: 1.1rem;
-    font-weight: 500;
-    color: rgba(255, 255, 255, 0.64);
+    font-weight: 300;
+    color: #f0f0f0;
     letter-spacing: 0.01em;
 }
 
 .logoitalic {
     font-style: italic;
     font-weight: 200;
+    color: rgba(255, 255, 255, 0.5);
 }
+
 
 /* Desktop Navigation Menu */
 .nav-menu {
@@ -177,7 +179,7 @@ body {
 }
 
 .nav-link {
-    color: rgba(255, 255, 255, 0.64);
+    color: rgba(255, 255, 255, 0.5);
     text-decoration: none;
     font-size: 0.75rem;
     font-weight: 400;
@@ -703,7 +705,7 @@ body {
    .image-grid {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 4rem;
     justify-content: center;
     align-items: center;
     max-width: 85vw;
@@ -712,9 +714,9 @@ body {
 }
 
 .image1 img{
-    height: 300px;
-    width: 300px;
-    margin-left: 10vw;
+    height: 250px;
+    width: 250px;
+    margin-left: 50vw;
     object-fit: cover;
     border-radius: 8px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
@@ -726,15 +728,15 @@ body {
     width: 350px;
     margin-left: 70vw;
     object-fit: cover;
-    border-radius: 8px;
+    border-radius: 4px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .image3 img{
-    height: 300px;
-    width: 400px;
-    margin-left: 20vw;
+    height: 400px;
+    width: 250px;
+    margin-left: 45vw;
     object-fit: cover;
     border-radius: 8px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
@@ -742,9 +744,9 @@ body {
 }
 
 .image4 img{
-    height: 400px;
+    height: 200px;
     width: 300px;
-    margin-left: 60vw;
+    margin-left: 70vw;
     object-fit: cover;
     border-radius: 8px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
@@ -753,8 +755,8 @@ body {
 
 .image5 img{
     height: 200px;
-    width: 200px;
-    margin-left: 20vw;
+    width: 280px;
+    margin-left: 50vw;
     object-fit: cover;
     border-radius: 8px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
@@ -762,8 +764,8 @@ body {
 }
 
 .image6 img{
-    height: 300px;
-    width: 300px;
+    height: 240px;
+    width: 350px;
     margin-left: 70vw;
     margin-bottom: 80vh;
     object-fit: cover;
@@ -895,8 +897,8 @@ body {
 
 .card {
     position: sticky;
-    top: 66px;
-    padding-top: calc(var(--index) * 66px +  var(--cardTopPadding));
+    top: 61px;
+    padding-top: calc(var(--index) * 61px +  var(--cardTopPadding));
     opacity: 1;
     transition: opacity 0.3s ease;
 }
@@ -915,6 +917,15 @@ body {
     background-color: #0f0f0f;
     border-radius: 20px;
     margin: 0 auto;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    width: 100%;
+    height: 100%;
 }
 
 .card-title {
@@ -936,13 +947,14 @@ body {
 }
 
 .card-title h2 {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-family: 'UnivaNova', sans-serif;
     margin: 0;
     font-weight: 200;
     font-style: italic;
     text-transform: uppercase;
     letter-spacing: 0.05em;
+    margin-bottom: 7px;
 }
 
 .card-images {
@@ -959,8 +971,113 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s ease;
+    transition: transform 0.5s ease, filter 0.5s ease;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card-images:hover img {
+    transform: scale(1.05);
+    filter: grayscale(100%) blur(1px);
+    backdrop-filter: blur(2px);
+}
+
+.image-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.card-images:hover .image-container {
+    backdrop-filter: blur(2px);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Info Overlay for Large Screens */
+.info-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4), transparent);
+    padding: 3rem 1.5rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    pointer-events: none;
+    min-height: 140px;
+}
+
+.card-images:hover .info-overlay {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.project-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+}
+
+.project-subtitle {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.project-number {
+    font-family: 'UnivaNova', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.project-desc {
+    font-family: 'UnivaNova', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #f0f0f0;
+    letter-spacing: 0.05em;
+    max-width: 500px;
+    line-height: 1.4;
+}
+
+.desktop-case-study-btn {
+    background: linear-gradient(135deg, #687cff, #7a8bff);
+    color: #0f0f0f;
+    text-decoration: none;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    font-family: 'UnivaNova', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.desktop-case-study-btn:hover {
+    background: linear-gradient(135deg, #7a8bff, #8a9bff);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(104, 124, 255, 0.3);
+}
+
+.arrow-right {
+    transition: transform 0.3s ease;
+}
+
+.desktop-case-study-btn:hover .arrow-right {
+    transform: translateX(3px);
 }
 
 .card-tags {
@@ -997,12 +1114,14 @@ body {
     pointer-events: none;
     z-index: 10;
     transition: all 0.3s ease;
+    display: none !important;
 }
 
-.card-images:hover .case-study-overlay {
+/* Circular overlay is now hidden on all screen sizes */
+/* .card-images:hover .case-study-overlay {
     opacity: 1;
     pointer-events: auto;
-}
+} */
 
 .case-study-btn {
     position: relative;
@@ -1067,9 +1186,9 @@ body {
     background-color: #7a8bff;
 }
 
-/* Mobile Case Study Button */
+/* Mobile Case Study Button - Now used on all screen sizes */
 .mobile-case-study-btn {
-    display: none !important;
+    display: inline-block !important;
     background: linear-gradient(135deg, #687cff, #7a8bff) !important;
     color: #0f0f0f !important;
     text-decoration: none !important;
@@ -1087,12 +1206,35 @@ body {
     cursor: pointer !important;
     letter-spacing: 0.05em !important;
     margin-top: 0.5rem !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
 }
 
 .mobile-case-study-btn:hover {
     background: linear-gradient(135deg, #7a8bff, #8a9bff);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(104, 124, 255, 0.3);
+}
+
+.mobile-case-study-btn:hover .arrow-right {
+    transform: translateX(3px);
+}
+
+/* Mobile Project Description */
+.mobile-project-desc {
+    display: none;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.mobile-project-desc p {
+    font-family: 'UnivaNova', sans-serif;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.4;
+    margin: 0;
 }
 
 /* ========================================
@@ -1580,7 +1722,7 @@ body {
     }
 
     .card-images img {
-        height: 180%;
+        height: 200px;
         width: 100%;
         object-fit: cover;
     }
@@ -1631,7 +1773,8 @@ body {
 
     /* Contact Section Mobile */
     .contact-section {
-        padding: 6rem 0 2rem 0;
+        padding: 3rem 0 2rem 0;
+        margin-top: 8rem;
     }
     
     .contact-container {
@@ -1729,8 +1872,10 @@ body {
     .stats-grid {
         grid-template-columns: 1fr;
         gap: 1rem;
-        margin: 0 2rem;
+        margin: 0 auto;
         justify-content: center;
+        width: 85vw;
+        max-width: 300px;
     }
     
     .stat-item {
@@ -1761,6 +1906,31 @@ body {
     
     .stat-label {
         font-size: 0.6rem;
+    }
+    
+    /* Very small screen stats */
+    @media (max-width: 360px) {
+        .stats-grid {
+            width: 90vw;
+            max-width: 280px;
+            gap: 0.8rem;
+        }
+        
+        .stat-item {
+            padding: 0.8rem 1.5rem;
+        }
+        
+        .stat-number {
+            font-size: 1.6rem;
+        }
+        
+        .stat-emoji {
+            font-size: 1.4rem;
+        }
+        
+        .stat-label {
+            font-size: 0.55rem;
+        }
     }
 
     .hero-section {
@@ -1817,11 +1987,11 @@ body {
     }
    
     .about-section {
-        height: 4000px;
+        height: 3000px;
     }
 
     .image-grid-section {
-        height: 4000px;
+        height: 3000px;
     }
 
     /* Extra small screen image grid styles */
@@ -1868,10 +2038,82 @@ body {
         width: auto;
         max-height: 250px;
     }
+    
+    /* Extra small screen image grid styles */
+    @media (max-width: 480px) {
+        .image1 img,
+        .image2 img,
+        .image3 img,
+        .image4 img,
+        .image5 img,
+        .image6 img {
+            max-width: 50vw;
+            max-height: 150px;
+            border-radius: 4px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .image-grid {
+            gap: 6rem;
+            padding: 1.5rem 0.5rem;
+        }
+
+        .image1 img{
+            margin-left: 40vw;
+            max-width: 40vw;
+        }
+
+        .image2 img{
+            margin-left: -20vw;
+            max-width: 60vw;
+        }
+
+        .image3 img{
+            margin-left: 40vw;
+            max-height: 45vw;
+        }
+
+        .image4 img{
+            margin-left: -30vw;
+            max-width: 50vw;
+        }
+
+        .image5 img{
+            margin-left: 40vw;
+            max-width: 40vw;
+        }
+
+        .image6 img{
+            margin-left: -30vw;
+            max-width: 50vw;
+        }
+    }
+    
+    /* Very small screen image grid styles */
+    @media (max-width: 360px) {
+        .image1 img,
+        .image2 img,
+        .image3 img,
+        .image4 img,
+        .image5 img,
+        .image6 img {
+            max-width: 50vw;
+            max-height: 120px;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .image-grid {
+            gap: 3rem;
+            padding: 1.2rem 0.3rem;
+        }
+    }
 
     /* Contact Section Extra Small */
     .contact-section {
+        margin-top: 4rem;
         padding: 2rem 0 2rem 0;
+        margin-top: 6rem;
     }
     
     .contact-container {
@@ -1991,9 +2233,23 @@ body {
     }
 
     .card-images img {
-        height: 140%;
+        height: 200px;
         width: 100%;
         object-fit: cover;
+        transition: transform 0.5s ease, filter 0.5s ease;
+    }
+    
+    .card-images:hover img {
+        transform: scale(1.05);
+        filter: grayscale(100%) blur(1px);
+        backdrop-filter: blur(8px);
+    }
+    
+    .card-images:hover .image-container {
+        backdrop-filter: blur(10px);
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     }
     
     .case-study-btn {
@@ -2058,6 +2314,11 @@ body {
     .mobile-menu-btn.active {
         display: none !important;
     }
+    
+    /* Hide mobile case study button on large screens */
+    .mobile-case-study-btn {
+        display: none !important;
+    }
 }
 
 /* FORCE MOBILE BEHAVIOR - HIGH PRIORITY */
@@ -2067,6 +2328,17 @@ body {
         opacity: 0 !important;
         pointer-events: none !important;
         visibility: hidden !important;
+    }
+    
+    .info-overlay {
+        display: none !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+        visibility: hidden !important;
+    }
+    
+    .mobile-project-desc {
+        display: block !important;
     }
     
     .mobile-case-study-btn {
@@ -2084,6 +2356,17 @@ body {
         opacity: 0 !important;
         pointer-events: none !important;
         visibility: hidden !important;
+    }
+    
+    .info-overlay {
+        display: none !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+        visibility: hidden !important;
+    }
+    
+    .mobile-project-desc {
+        display: block !important;
     }
     
     .mobile-case-study-btn {
