@@ -1922,6 +1922,10 @@ body {
         gap: 1rem;
     }
     
+    .contact-icon {
+        font-size: 2.2rem;
+    }
+    
     .social-links {
         justify-content: center;
         gap: 1.5rem;
@@ -2034,6 +2038,20 @@ body {
         font-size: 0.6rem;
         text-align: center;
     }
+
+    .contact-icon {
+        font-size: 1.8rem;
+        flex-shrink: 0;
+    }
+    
+    .contact-details h3 {
+        font-size: 0.6rem;
+    }
+    
+    .contact-details a,
+    .contact-details p {
+        font-size: 0.9rem;
+    }
     
     /* Very small screen stats */
     @media (max-width: 360px) {
@@ -2128,20 +2146,7 @@ body {
             width: 100%;
         }
         
-        .contact-icon {
-            font-size: 2rem;
-            flex-shrink: 0;
-        }
-        
-        .contact-details h3 {
-            font-size: 0.6rem;
-        }
-        
-        .contact-details a,
-        .contact-details p {
-            font-size: 0.9rem;
-        }
-        
+      
         .social-links {
             gap: 1rem;
             justify-content: center;
@@ -2185,8 +2190,8 @@ body {
         width: 600px;
         height: 400px;
         margin: 0 auto;
-        top: 14rem;
-        right: -20rem;
+        top: 20rem;
+        right: -10rem;
     }
 
     .hero-video img {
@@ -2267,6 +2272,10 @@ body {
         width: auto;
         max-height: 250px;
     }
+
+    .contact-subtitle {
+        font-size: 1.1rem;
+    }
     
     /* Extra small screen image grid styles */
     @media (max-width: 480px) {
@@ -2283,7 +2292,7 @@ body {
         }
         
         .image-grid {
-            gap: 8rem;
+            gap: 14rem;
             padding: 1.5rem 0.5rem;
         }
 
@@ -2337,31 +2346,73 @@ body {
         }
         
         .image-grid {
-            gap: 8rem;
+            gap: 14rem;
             padding: 1.2rem 0.3rem;
+        }
+
+        .hero-desc {
+            font-size: 0.9rem;
         }
     }
 
     /* Contact Section Extra Small */
     .contact-section {
-        margin-top: 4rem;
+        height: auto;
+        min-height: auto;
         padding: 2rem 0 2rem 0;
-        margin-top: 10rem;
+        margin-top: 12rem;
+        overflow: visible;
     }
     
     .contact-container {
         width: 98%;
         padding: 0 0.5rem;
     }
+
+
+    .contact-hero {
+        margin-bottom: 3rem;
+        gap: 1.5rem;
+    }
     
+    .contact-title {
+        font-size: 2.5rem;
+        line-height: 1.2;
+        margin: 0 0 1rem 0;
+    }
+    
+    .contact-subtitle {
+        font-size: 0.9rem;
+        max-width: 70%;
+    }
+    
+    .contact-content {
+        gap: 4rem;
+    }
+    
+    .contact-left {
+        max-width: 100%;
+    }
+    
+    .contact-right {
+        max-width: 100%;
+        gap: 2rem;
+    }
     
     .contact-info {
         gap: 1rem;
+        width: 100%;
     }
     
     .contact-item {
-        padding: 0.8rem 0;
+        padding: 0.6rem 0;
         gap: 0.8rem;
+        width: 100%;
+    }
+    
+    .contact-icon {
+        font-size: 1.8rem;
+        flex-shrink: 0;
     }
     
     .contact-details h3 {
@@ -2370,25 +2421,26 @@ body {
     
     .contact-details a,
     .contact-details p {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
     
     .social-links {
         gap: 1rem;
+        justify-content: center;
+        width: 100%;
     }
     
     .social-link {
-        padding: 0.6rem;
+        width: 50px;
+        height: 50px;
+        padding: 0.5rem;
     }
     
     .social-link svg,
     .social-link i {
-        width: 20px;
-        height: 20px;
-        font-size: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        width: 18px;
+        height: 18px;
+        font-size: 18px;
     }
     
     /* Latest Works Extra Small Screen Styles */
