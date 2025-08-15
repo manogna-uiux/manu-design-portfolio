@@ -1249,7 +1249,7 @@ body {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    margin-top: 20rem;
+    margin-top: 26rem;
 }
 
 .contact-bg-video {
@@ -1594,7 +1594,7 @@ body {
     }
 
     .about-section {
-        height: 1400px;
+        height: 1000px;
     }
     
     .about-text span {
@@ -1683,8 +1683,8 @@ body {
     }
 
     .hero-desc {
-        max-width: 350px;
-        font-size: 0.9rem;
+        max-width: 500px;
+        font-size: 1.2rem;
     }
 
     .arrow-circle {
@@ -1978,6 +1978,7 @@ body {
     /* About text extra small */
     .about-flex-container {
         gap: 6rem;
+        top: 8rem;
     }
     
     .about-text {
@@ -1995,7 +1996,7 @@ body {
     /* Stats extra small */
     .stats-grid {
         grid-template-columns: 1fr;
-        gap: 1rem;
+        gap: 1.5rem;
         margin: 0 auto;
         justify-content: center;
         width: 85vw;
@@ -2003,7 +2004,7 @@ body {
     }
     
     .stat-item {
-        padding: 0rem 2rem;
+        padding: 0.8rem 2rem;
         border-width: 0;
         border-bottom: 1px solid rgba(255, 255, 227, 0.1);
         border-right: none !important;
@@ -2197,8 +2198,8 @@ body {
     }
 
     .hero-desc {
-        max-width: 250px;
-        font-size: 0.8rem;
+        max-width: 300px;
+        font-size: 1rem;
     }
 
     .arrow-circle {
@@ -2215,11 +2216,11 @@ body {
     }
    
     .about-section {
-        height: 3000px;
+        height: 600px;
     }
 
     .image-grid-section {
-        height: 3000px;
+        height: 600px;
     }
 
     /* Extra small screen image grid styles */
@@ -2318,7 +2319,7 @@ body {
     }
 
     .mobile-project-desc p {
-        font-size: 1.1rem !important;
+        font-size: 1rem !important;
     }
     
     /* Very small screen image grid styles */
