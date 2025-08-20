@@ -483,6 +483,28 @@ body {
     text-decoration: underline;
 }
 
+.download-portfolio {
+    text-decoration: none;
+    margin-top: 0.2rem;
+}
+
+.hero-desc .portfolio-link {
+    color: #687cff !important;
+    font-size: 0.76rem;
+    text-decoration: underline !important;
+    text-underline-offset: 3px;
+    text-decoration-color: #687cff !important;
+    font-weight: 400;
+    font-style: italic;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.hero-desc .portfolio-link:hover {
+    color: #a0aaec !important;
+    text-decoration-color: #8a9aff !important;
+}
+
 .arrow-circle {
     position: relative;
     width: 60px;
@@ -687,7 +709,8 @@ body {
 }
 
 .resume-download:hover .stat-label {
-    color: rgba(255, 255, 255, 0.8);
+    color: #a0aaec !important;
+    text-decoration-color: #8a9aff !important;
 }
 
 /* ========================================
@@ -1511,6 +1534,22 @@ body {
     margin-right: 90px;
 }
 
+.center-text .profile-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    display: block;
+}
+
+.center-text .profile-image:hover {
+    transform: scale(1.1);
+    border-color: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
 /* ========================================
    RESPONSIVE DESIGN
    ======================================== */
@@ -1536,6 +1575,11 @@ body {
         right: 10%;
         font-size: 32px;
         margin-right: 90px;
+    }
+    
+    .center-text .profile-image {
+        width: 80px;
+        height: 80px;
     }
     
     /* About section responsive */
