@@ -114,6 +114,8 @@
     font-style: italic;
 }
 
+
+
 /* ========================================
    GLOBAL STYLES & RESET
    ======================================== */
@@ -620,9 +622,8 @@ body {
 .stat-item {
     text-align: center;
     padding: 2rem 1.5rem;
-    backdrop-filter: blur(10px);
     border-right: 1px solid rgba(255, 255, 227, 0.1);   
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -631,7 +632,6 @@ body {
 
 .stat-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 .stat-content {
@@ -728,7 +728,7 @@ body {
    .image-grid {
     display: flex;
     flex-direction: column;
-    gap: 4rem;
+    gap: 6rem;
     justify-content: center;
     align-items: center;
     max-width: 85vw;
@@ -892,6 +892,8 @@ body {
     font-family: 'UnivaNova', sans-serif;
     margin: 0 auto;
     margin-top: 10rem;
+    will-change: scroll-position;
+    transform: translateZ(0);
 }
 
 #cards {
@@ -903,6 +905,8 @@ body {
     gap: var(--cardMargin);
     padding-bottom: calc(var(--cards) * var(--cardTopPadding));
     margin-bottom: var(--cardMargin);
+    will-change: scroll-position;
+    transform: translateZ(0);
 }
 
 #card1 {
@@ -920,10 +924,12 @@ body {
 
 .card {
     position: sticky;
-    top: 61px;
+    top: 80px;
     padding-top: calc(var(--index) * 61px +  var(--cardTopPadding));
     opacity: 1;
     transition: opacity 0.3s ease;
+    will-change: transform;
+    transform: translateZ(0);
 }
 
 .card-body {
@@ -936,11 +942,13 @@ body {
     width: 70vw;
     justify-content: start;
     align-items: flex-start;
-    transition: all 0.5s;
+    transition: all 0.3s ease;
     background-color: #0f0f0f;
     border-radius: 20px;
     margin: 0 auto;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
+    will-change: transform;
+    transform: translateZ(0);
 }
 
 .card-link {
@@ -999,9 +1007,7 @@ body {
 }
 
 .card-images:hover img {
-    transform: scale(1.05);
-    filter: grayscale(100%) blur(1px);
-    backdrop-filter: blur(2px);
+    filter: grayscale(85%);
 }
 
 .image-container {
@@ -1272,7 +1278,7 @@ body {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    margin-top: 26rem;
+    margin-top: 32rem;
 }
 
 .contact-bg-video {

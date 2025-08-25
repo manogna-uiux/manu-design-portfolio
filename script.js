@@ -39,6 +39,7 @@ ScrollTrigger.addEventListener('refresh', () => lenis.resize());
 
 
 document.addEventListener('DOMContentLoaded', () => {
+    
     // Mobile Menu Functionality
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const mobileNavMenu = document.querySelector('.mobile-nav-menu');
