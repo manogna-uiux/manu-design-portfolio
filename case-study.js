@@ -142,6 +142,23 @@ function initializeScrollAnimations() {
         }
     );
     
+    // Large Centered Image Animation
+    gsap.fromTo('.large-centered-image', 
+        { y: 50, opacity: 0 },
+        { 
+            y: 0, 
+            opacity: 1, 
+            duration: 1.2,
+            ease: "power2.out",
+            scrollTrigger: {
+                trigger: '.large-image-section',
+                start: 'top 80%',
+                end: 'bottom 20%',
+                toggleActions: 'play none none reverse'
+            }
+        }
+    );
+    
     // Design Process Section Animation
     gsap.fromTo('.process-title', 
         { y: 50, opacity: 0 },

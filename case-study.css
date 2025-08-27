@@ -3,7 +3,10 @@
    Matching Home Page Design System
    ======================================== */
 
-
+/* CSS Variable for Accent Color - Default fallback */
+:root {
+    --accent-color: #ff7300;
+}
 
 /* ========================================
    BASE STYLES
@@ -258,7 +261,7 @@ html {
 }
 
 .meta-tag {
-    color: #ff7300;
+    color: var(--accent-color);
     padding: 1rem 1.5rem;
     border-radius: 12px;
     font-size: 0.75rem;
@@ -281,7 +284,7 @@ html {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 115, 0, 0.1), transparent);
+    background: linear-gradient(90deg, transparent, rgba(var(--accent-color-rgb, 255, 115, 0), 0.1), transparent);
     transition: left 0.5s ease;
 }
 
@@ -291,7 +294,7 @@ html {
 
 .meta-tag:hover {
     transform: translateY(-4px);
-    border-color: rgba(255, 115, 0, 0.3);
+    border-color: rgba(var(--accent-color-rgb, 255, 115, 0), 0.3);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
     background-color: rgba(15, 15, 15, 0.7);
 }
@@ -343,7 +346,7 @@ html {
 }
 
 .tab-heading.active {
-    color: #ff7300;
+    color: var(--accent-color);
 }
 
 .tab-number {
@@ -354,7 +357,7 @@ html {
 }
 
 .tab-heading.active .tab-number {
-    color: #ff7300;
+    color: var(--accent-color);
 }
 
 .tab-title {
@@ -367,7 +370,7 @@ html {
 }
 
 .tab-heading.active .tab-title {
-    color: #ff7300;
+    color: var(--accent-color);
     font-weight: 400;
     text-transform: uppercase;
     font-size: 0.9rem;
@@ -463,7 +466,7 @@ html {
 }
 
 .content-body li::marker {
-    color: #ff7300;
+    color: var(--accent-color);
 }
 
 .stat-item {
@@ -474,7 +477,7 @@ html {
     display: block;
     font-size: 2rem;
     font-weight: 600;
-    color: #ff7300;
+    color: var(--accent-color);
     margin-bottom: 0.5rem;
 }
 
@@ -504,7 +507,7 @@ html {
 }
 
 .challenge-item h4 {
-    color: #ff7300;
+    color: var(--accent-color);
     margin-bottom: 0.6rem;
     font-size: 1rem;
 }
@@ -610,6 +613,14 @@ html {
     margin-top: 6rem;
 }
 
+/* Center single impact stat */
+.impact-stats:has(.impact-stat-item:only-child) {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .impact-stat-item {
     text-align: center;
     padding: 2rem;
@@ -618,6 +629,10 @@ html {
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .impact-stat-item::before {
@@ -627,7 +642,7 @@ html {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 115, 0, 0.1), transparent);
+    background: linear-gradient(90deg, transparent, rgba(var(--accent-color-rgb, 255, 115, 0), 0.1), transparent);
     transition: left 0.5s ease;
 }
 
@@ -637,7 +652,7 @@ html {
 
 .impact-stat-item:hover {
     transform: translateY(-5px);
-    border-color: rgba(255, 115, 0, 0.3);
+    border-color: rgba(var(--accent-color-rgb, 255, 115, 0), 0.3);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
@@ -645,7 +660,7 @@ html {
     display: block;
     font-size: 3rem;
     font-weight: 200;
-    color: #ff7300;
+    color: var(--accent-color);
     margin-bottom: 1rem;
     font-family: 'UnivaNova', sans-serif;
     letter-spacing: -0.02em;
@@ -659,6 +674,22 @@ html {
     font-weight: 300;
     letter-spacing: 0.02em;
     line-height: 1.4;
+}
+
+.impact-icon {
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 0.5rem;
+    display: block;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.impact-icon:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
 }
 
 /* Responsive Design */
@@ -715,13 +746,55 @@ html {
 }
 
 /* ========================================
+   LARGE CENTERED IMAGE SECTION
+   ======================================== */
+.large-image-section {
+    width: 90%;
+    margin: 0 auto;
+    padding: 6rem 0;
+    margin-top: 4rem;
+}
+
+.large-image-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+.large-centered-image {
+    width: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    border-radius: 15px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.large-centered-image.animate {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.large-centered-image:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+}
+
+/* ========================================
    DESIGN PROCESS SECTION
    ======================================== */
 .design-process-section {
     width: 90%;
     margin: 0 auto;
     padding: 8rem 0;
-    margin-top: 10rem;
+    margin-top: 4rem;
 }
 
 .process-header {
@@ -859,6 +932,43 @@ html {
 .grid-item.large-image {
     grid-column: 3 / 5;
     grid-row: 1 / 3;
+}
+
+/* Desktop Layout - Grid containers behave as grid items */
+.grid-left-half,
+.grid-right-half {
+    display: contents;
+}
+
+/* Small Screen Grid Wrapping - Left/Right Halves on Separate Rows */
+@media (max-width: 768px) {
+    .grid-2x4 {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        height: auto;
+    }
+    
+    .grid-left-half {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 2rem;
+        height: 300px;
+    }
+    
+    .grid-right-half {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 2rem;
+        height: 300px;
+    }
+    
+    .grid-item.large-image {
+        grid-column: 1 / 3;
+        grid-row: 1 / 3;
+    }
 }
 
 /* ========================================
@@ -1105,6 +1215,10 @@ html {
 
 /* Large Desktop */
 @media (max-width: 1280px) {
+    .large-image-section {
+        margin-top: 2rem;
+    }
+    
     .design-process-section {
         margin-top: 5rem;
     }
@@ -1199,11 +1313,11 @@ html {
     }
 
     .tab-heading:hover {
-        color: #ff7300;
+        color: var(--accent-color);
     }
 
     .tab-heading.active {
-        color: #ff7300;
+        color: var(--accent-color);
     }
 
     .image-grid-2x4 {
@@ -1275,6 +1389,12 @@ html {
     .hero-title {
         font-size: 3.5rem;
         padding-left: 2rem;
+    }
+
+    .large-image-section {
+        width: 95%;
+        padding: 4rem 0;
+        margin-top: 2rem;
     }
 
     .design-process-section {
@@ -1390,6 +1510,21 @@ html {
 }
 /* Mobile */
 @media (max-width: 480px) {
+    /* Large Image Section */
+    .large-image-section {
+        width: 95%;
+        padding: 2rem 0;
+        margin-top: 1rem;
+    }
+
+    .large-image-container {
+        padding: 1rem 0;
+    }
+
+    .large-centered-image {
+        border-radius: 10px;
+    }
+
     /* Navigation */
     .case-study-navbar {
         padding: 0 1rem;
