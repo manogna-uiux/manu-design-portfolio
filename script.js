@@ -200,33 +200,43 @@ document.addEventListener('DOMContentLoaded', () => {
             const lines = aboutText.querySelectorAll('span');
             const shadowLines = aboutTextShadow.querySelectorAll('span');
             
-            // Set initial state - lines start from left (masked)
-            gsap.set(lines, { clipPath: "inset(0 100% 0 0)" });
-            gsap.set(shadowLines, { opacity: 0.2 }); // Shadow text always visible with 0.2 opacity
+            // Check if we're on a large screen
+            const isLargeScreen = window.innerWidth > 768;
             
-            // Create timeline for line-by-line reveal
-            const tl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: ".about-section",
-                    start: "top 30%",
-                    end: "bottom 20%",
-                    scrub: 1
-                }
-            });
-            
-            // Animate main text lines from left to right
-            // Reduce animation duration on small screens
-            const isMobile = window.innerWidth <= 768;
-            const animationDuration = isMobile ? 0.15 : 0.3;
-            const staggerDelay = isMobile ? 0.02 : 0.05;
-            
-            lines.forEach((line, index) => {
-                tl.to(line, {
-                    clipPath: "inset(0 0% 0 0)",
-                    duration: animationDuration,
-                    ease: "power2.out"
-                }, index * staggerDelay);
-            });
+            if (isLargeScreen) {
+                // On large screens, set text to be fully visible immediately
+                gsap.set(lines, { clipPath: "inset(0 0% 0 0)", opacity: 1 });
+                gsap.set(shadowLines, { opacity: 0.2 });
+            } else {
+                // On mobile/tablet, run the animation
+                // Set initial state - lines start from left (masked)
+                gsap.set(lines, { clipPath: "inset(0 100% 0 0)" });
+                gsap.set(shadowLines, { opacity: 0.2 }); // Shadow text always visible with 0.2 opacity
+                
+                // Create timeline for line-by-line reveal
+                const tl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: ".about-section",
+                        start: "top 30%",
+                        end: "bottom 20%",
+                        scrub: 1
+                    }
+                });
+                
+                // Animate main text lines from left to right
+                // Reduce animation duration on small screens
+                const isMobile = window.innerWidth <= 768;
+                const animationDuration = isMobile ? 0.15 : 0.3;
+                const staggerDelay = isMobile ? 0.02 : 0.05;
+                
+                lines.forEach((line, index) => {
+                    tl.to(line, {
+                        clipPath: "inset(0 0% 0 0)",
+                        duration: animationDuration,
+                        ease: "power2.out"
+                    }, index * staggerDelay);
+                });
+            }
             
             // No animation for shadow text - it stays at 0.2 opacity always
         }
